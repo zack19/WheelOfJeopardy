@@ -1,38 +1,45 @@
 package teamAgile;
 
-import java.util.Scanner;
-
-public class WheelOfJeopardy
+public class PlayGame
 {
-    public static final int CAT1 = 0;
-    public static final int CAT2 = 1;
-    public static final int CAT3 = 2;
-    public static final int CAT4 = 3;
-    public static final int CAT5 = 4;
-    public static final int CAT6 = 5;
-    public static final int LOSE_TURN = 6;
-    public static final int FREE_TURN = 7;
-    public static final int BANKRUPT = 8;
-    public static final int PLAYERS_CHOICE = 9;
-    public static final int OPP_CHOICE = 10;
-    public static final int RE_SPIN = 11;
+    private Player[] playerList;
+    private int round;
+    private String[] wheel;
+    private int remainingSpins;
 
-    public static void main(String[] args)
+    public PlayGame(Player[] playerList)
     {
-        Scanner user_in = new Scanner(System.in);
+        this.playerList = playerList;
+        remainingSpins = 50;
+        round = 1;
+    }
 
-        System.out.print("Enter the number of players: ");
-        int players = user_in.nextInt();
-        Player[] playerList = new Player[players];
+    // ----------------------------------------------------------
+    /**
+     * Randomly choose an int between 0 and 11 to represent
+     * spinning wheel
+     * @return wheel segment
+     */
+    public int spinWheel()
+    {
+        return 0;
+    }
 
-        for (int i = 0; i < players; i++)
-        {
-            System.out.println("Enter Player " + (i + 1) + " Name: ");
-            Player tempPlayer = new Player(user_in.next());
-            //TODO put in random order
-            playerList[i] = tempPlayer;
-        }
+    // ----------------------------------------------------------
+    /**
+     * Move flow of control to next player
+     */
+    public void nextPlayer()
+    {
+    }
 
-        PlayGame game = new PlayGame(playerList);
+    // ----------------------------------------------------------
+    /**
+     * Get a question from the board
+     * @param category to get question from
+     */
+    public void getQuestion(int category)
+    {
+
     }
 }
