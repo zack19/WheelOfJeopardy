@@ -2,14 +2,16 @@ package teamAgile;
 
 public class Player
 {
-    String name;
-    private int points;
+    private String name;
+    private int[] points;
     private int freePlayTokens;
 
     public Player(String name)
     {
         this.name = name;
-        points = 0;
+        points = new int[2];
+        points[0] = 0;
+        points[1] = 0;
         freePlayTokens = 0;
     }
 
@@ -17,20 +19,30 @@ public class Player
     /**
      * Update Player Points
      * @param pointChange
+     * @param round
      */
-    public void updatePoints(int pointChange)
+    public void updatePoints(int pointChange, int round)
     {
 
     }
 
     // ----------------------------------------------------------
     /**
-     * Update Player Tokens
-     * @param tokenChange
+     * Lose all points for round
+     * @param round
      */
-    public void updateTokens(int tokenChange)
+    public void bankrupt(int round)
     {
+        points[round - 1] = 0;
+    }
 
+    // ----------------------------------------------------------
+    /**
+     * Update Player Tokens
+     */
+    public void addToken()
+    {
+        freePlayTokens++;
     }
 
     // ----------------------------------------------------------
@@ -40,6 +52,18 @@ public class Player
      */
     public Boolean useToken()
     {
-        return true;
+        //TODO Prompt user yes or no
+        if (freePlayTokens > 0)
+        {
+            freePlayTokens--;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 }
