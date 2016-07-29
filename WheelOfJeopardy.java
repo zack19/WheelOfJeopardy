@@ -1,6 +1,7 @@
 package teamAgile;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class WheelOfJeopardy
 {
@@ -20,6 +21,7 @@ public class WheelOfJeopardy
     public static void main(String[] args)
     {
         Scanner user_in = new Scanner(System.in);
+        Random rand = new Random();
 
         System.out.print("Enter the number of players: ");
         int players = user_in.nextInt();
@@ -29,10 +31,20 @@ public class WheelOfJeopardy
         {
             System.out.println("Enter Player " + (i + 1) + " Name: ");
             Player tempPlayer = new Player(user_in.next());
-            //TODO put in random order
-            playerList[i] = tempPlayer;
+            int pos = rand.nextInt(3);
+            while (playerList[pos] != null)
+            {
+                pos = rand.nextInt(3);
+            }
+            playerList[pos] = tempPlayer;
         }
 
+        System.out.println("Player Order is...");
+        for (int i = 0; i < 3; i++)
+        {
+            System.out.println((i+1) + ". " + playerList[i].getName());
+        }
         PlayGame game = new PlayGame(playerList);
+        game.startGame();
     }
 }
