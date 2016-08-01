@@ -14,7 +14,7 @@ public class PlayGame
     public PlayGame(Player[] playerList)
     {
         this.playerList = playerList;
-        remainingSpins = 50;
+        remainingSpins = 10;
         round = 1;
         playersTurn = 0;
     }
@@ -27,36 +27,53 @@ public class PlayGame
     {
         while (remainingSpins > 0)
         {
+            System.out.println("Current Score");
+            for (int i = 0; i < playerList.length; i++)
+            {
+                System.out.println(playerList[i].getName() + ": " + playerList[i].getPoints(round - 1));
+            }
             int move = spinWheel();
 
             if (move == WheelOfJeopardy.CAT1)
             {
                 System.out.println("Cat 1");
+                Question currQuestion = getQuestion(1);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.CAT2)
             {
                 System.out.println("Cat 2");
+                Question currQuestion = getQuestion(2);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.CAT3)
             {
                 System.out.println("Cat 3");
+                Question currQuestion = getQuestion(3);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.CAT4)
             {
                 System.out.println("Cat 4");
+                Question currQuestion = getQuestion(4);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.CAT5)
             {
                 System.out.println("Cat 5");
+                Question currQuestion = getQuestion(5);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.CAT6)
             {
                 System.out.println("Cat 6");
+                Question currQuestion = getQuestion(6);
+                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
                 nextPlayer();
             }
             else if (move == WheelOfJeopardy.LOSE_TURN)
@@ -113,7 +130,7 @@ public class PlayGame
     public void nextPlayer()
     {
         playersTurn++;
-        if (playersTurn > 2)
+        if (playersTurn >= playerList.length)
         {
             playersTurn = 0;
         }
@@ -123,9 +140,11 @@ public class PlayGame
     /**
      * Get a question from the board
      * @param category to get question from
+     * @return Question
      */
-    public void getQuestion(int category)
+    public Question getQuestion(int category)
     {
-
+        Question ques = new Question(50, "cat 1");
+        return ques;
     }
 }
