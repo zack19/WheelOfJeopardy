@@ -31,7 +31,7 @@ public class WheelOfJeopardy
         {
             System.out.println("Enter Player " + (i + 1) + " Name: ");
             Player tempPlayer = new Player(user_in.next());
-            int pos = rand.nextInt(3);
+            int pos = rand.nextInt(players);
             while (playerList[pos] != null)
             {
                 pos = rand.nextInt(3);
@@ -40,7 +40,7 @@ public class WheelOfJeopardy
         }
 
         System.out.println("Player Order is...");
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < playerList.length; i++)
         {
             System.out.println((i+1) + ". " + playerList[i].getName());
         }
