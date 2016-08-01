@@ -23,7 +23,7 @@ public class Player
      */
     public void updatePoints(int pointChange, int round)
     {
-
+        points[round] += pointChange;
     }
 
     // ----------------------------------------------------------
@@ -62,8 +62,18 @@ public class Player
             return false;
     }
 
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @return
+     */
     public String getName()
     {
         return name;
+    }
+
+    public int getPoints(int round)
+    {
+        return points[round];
     }
 }
