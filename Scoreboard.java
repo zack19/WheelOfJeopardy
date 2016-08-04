@@ -11,6 +11,7 @@ public class Scoreboard
     // ----------------------------------------------------------
     /**
      * Loop through player list and print each player and points
+     * Show points per round seperately
      * @param playerList
      */
     public void displayPoints(Player[] playerList)
