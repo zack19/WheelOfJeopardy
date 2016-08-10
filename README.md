@@ -1,6 +1,6 @@
 # WheelOfJeopardy
 
-Format for questions.txt is...
+Format for questions.txt is...\n
 Category Number
 Round Number
 Category Name
