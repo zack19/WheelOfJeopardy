@@ -1,0 +1,600 @@
+1
+1
+Sports
+200
+Who is the all time Home Run Leader in the MLB?
+Babe Ruth
+Barry Bonds
+Hank Aaron
+Alex Rodriguez
+2
+1
+1
+Sports
+400
+Which school won the first College Football Playoff Championship in 2014?
+Alabama
+Virginia Tech
+Auburn
+Ohio State
+4
+1
+1
+Sports
+600
+Shortstop, Catcher, and Center Field are all defensive positions in which sport?
+Baseball
+Soccer
+Football
+Basketball
+1
+1
+1
+Sports
+800
+How many players per team can be on the field at one time in Football?
+12
+8
+11
+15
+3
+1
+1
+Sports
+1000
+In which city were the 2012 Summer Olympics held?
+Salt Lake City
+London
+Beijing
+Cancun
+2
+2
+1
+Technology
+200
+Which two countries have the most internet users?
+China and India
+USA and China
+USA and India
+China and Brazil
+1
+2
+1
+Technology
+400
+What is the most commonly used Web Browser is the United States Today?
+Microsoft Internet Exlporer
+Safari
+Mozilla Firefox
+Google Chrome
+4
+2
+1
+Technology
+600
+According to Pew Research Center, what is the most frequently used social media platform among teens?
+Instagram
+Twitter
+Snapchat
+Facebook
+4
+2
+1
+Technology
+800
+What percentage of adults in 2015 solely used cellphones as opposed to landlines in their homes?
+8
+5
+43
+75
+3
+2
+1
+Technology
+1000
+Who maintains and develops the Wi-Fi protocol standard?
+Apple
+Association for Computing Machinery (ACM)
+The Institute for Electrical and Electronics Engineers
+AT&T
+3
+3
+1
+Science
+200
+Photosyntehsis is the process of turning what into energy?
+Light
+Water
+Protein
+Soil
+1
+3
+1
+Science
+400
+What is known as the "Powerhouse" of the cell?
+Cell Wall
+Mitochondria
+Flagella
+Nucleoid
+2
+3
+1
+Science
+600
+Voltage is most commonly expressed in what units?
+Amps
+Ohms
+Volts
+Gallons
+3
+3
+1
+Science
+800
+How many miles above sea level must a satellite be placed in order to be in geosynchronous orbit?
+1,478,231
+8,935
+754
+22,236
+4
+3
+1
+Science
+1000
+What is time 0, or the Epoch time, on a linux system?
+1/1/1970
+1/1/1950
+6/15/1993
+1/1/1910
+1
+4
+1
+Geography
+200
+What is the largest continent?
+Africa
+Asia
+Europe
+Antarctica
+2
+4
+1
+Geography
+400
+Which country has the largest population?
+China
+India
+Russia
+Madagascar
+1
+4
+1
+Geography
+600
+What is the largest ocean?
+The Pacific
+The Atlantic
+The Indian
+The Arctic
+1
+4
+1
+Geography
+800
+What is the tallest mountain in the world?
+Mount Everest
+K2
+Mount Baker
+Mount Olympus
+1
+4
+1
+Geopgraphy
+1000
+Which is the smallest country?
+The Vatican
+England
+China
+USA
+1
+5
+1
+US Cities
+200
+Where is the Statue of Liberty located?
+New York
+New Jersey
+Washington DC
+Maryland
+2
+5
+1
+US Cities
+400
+What city is the birth place of the first Ferris Wheel?
+Chicago
+New York
+Cincinnati
+None of these
+1
+5
+1
+US Cities
+600
+Where can you find the largest boardwalk in the world?
+Ocean City, MD
+Ocean City, NJ
+Atlantic City
+Fort Myers
+3
+5
+1
+US Cities
+800
+What was the original capital of the United States?
+Philadelphia
+Washington DC
+Annapolis
+Detroit
+1
+5
+1
+US Cities
+1000
+Where is the oldest 'Chinatown' in North America?
+New York
+Washington DC
+San Francisco
+Chicago
+3
+6
+1
+Authors
+200
+Which author lead a series of wartime broadcasts during World War II on the subject of Christianity?
+C.S. Lewis
+J.R.R. Tolkein
+F. Scott Fitzgerald
+Zora Neale Hurston
+1
+6
+1
+Authors
+400
+Which author was awarded the Nobel Peace Prize in 1993 and a Pulitzer Prize for the 1988 book "Beloved"?
+Toni Morrison
+Maya Angelou
+Cornel West
+Ta-nehisi Coates
+1
+6
+1
+Authors
+600
+Who authored the book "To Kill A Mockingbird"?
+George Orwell
+Martin Luther King Jr.
+Ralph Ellison
+Harper Lee
+4
+6
+1
+Authors
+800
+Which author published over 60 children's books beginning with "And to Think That I Saw It on Mulberry Street"?
+Shel Silverstein
+Dr Suess
+J.K. Rowling
+George R.R. Martin
+2
+6
+1
+Authors
+1000
+Which author has old over 350 million copies of books and wrote the novel that became the basis for the movie "The Shawshank Redemption"?
+Edgar Allen Poe
+R.L. Stine
+Stephen King
+Christopher Pike
+3
+1
+2
+Word Origins
+400
+The word "salary" originated from which of the following?
+An Arabic word meaning "daily bread"
+A French word meaning "compensation"
+A German word meaning "what is due"
+A Latin word meaning "salt money"
+4
+1
+2
+Word Origins
+800
+The word "planet" originated from which of the following?
+An Arabic word meaning "tiny lights"
+An Egyptian word meaning "night god"
+A Greek word meaning "wandering stars"
+A latin word meaning "neighbors"
+3
+1
+2
+Word Origins
+1200
+Now synonymous with danger, the word "hazard" originated from which of the following?
+An Arabic term meaning "dice"
+A Dutch term meaning "caution"
+A japanese term meaning "god wind"
+A Portuguese term meaning "rocks"
+1
+1
+2
+Word Origins
+1600
+My gardener told me we don't need to plant; all my flowers are this type, from the latin word for "through the year"
+Perennial
+Annual
+Vascular
+Embryophyte
+1
+1
+2
+Word Origins
+2000
+This word for the art and science of good eating goes back to Greek for "belly"
+Tasty
+Belligerent
+Gastronomy
+Culinary
+3
+2
+2
+Literature
+400
+What novel by Philip K. Dick is the movie "Blade Runner" based off of?
+Do Androids Dream of Electric Sheep?
+Ender's Game
+Harry Potter
+Dune
+1
+2
+2
+Literature
+800
+Who wrote the book for the movie "Fight Club"?
+Stephen King
+Dean Koontz
+J.K. Rowling
+Chuck Palahniuk
+4
+2
+2
+Literature
+1200
+Which calssic is about a man fightin a whale?
+Shiloh
+Moby Dick
+Oliver Twist
+A Modest Proposal
+2
+2
+2
+Literature
+1600
+This author wrote the children's series "Goosebumps"
+R.L. Stine
+Stephen King
+Lindsay Lohan
+Ayn Rand
+1
+2
+2
+Literature
+2000
+"Huckleberry Finn" is by which author?
+Mark Twain
+Charles Dickens
+Ernest Hemingway
+William Faulkner
+1
+3
+2
+Fun Facts
+400
+A dolphin can hear sounds under water from how far away?
+1 mile
+15 miles
+30 miles
+100 miles
+2
+3
+2
+Fun Facts
+800
+How much did the world's first mobile phone cost?
+$334
+$1,657
+$3,995
+$10,878
+3
+3
+2
+Fun Facts
+1200
+What was the first food eaten in outer space by an american astronuat?
+Ice Cream
+Soup
+Appple Sauce
+Canned Fruit
+3
+3
+2
+Fun Facts
+1600
+Which animal can change direction mid-air?
+Cheetah
+Ostrich
+Moose
+Prairie Dog
+1
+3
+2
+Fun Facts
+2000
+Australia has a reef in what shape?
+Heart
+Star
+Triangle
+Snowman
+1
+4
+2
+Automobiles
+400
+What is the fastest production vehicle in the world?
+Ford Mustang
+Chevrolet Corvette
+Porsche 911 Turbo
+Bugatti Veyron
+4
+4
+2
+Automobiles
+800
+What was the first mass produced car?
+Chevrolet Camaro
+Hearse
+Ford Model-T
+Chevrolet Silverado
+3
+4
+2
+Automobiles
+1200
+What was the best selling vehicle on the planet in 2015?
+Ford F-150
+Toyota Corolla
+Chevrolet Silverado
+Toyota Prius
+2
+4
+2
+Automobiles
+1600
+What is the most expensive production vehicle?
+Koenigsegg CCXR Trevita
+Porsche Boxter
+Range Rover Sport
+Ferrari California
+1
+4
+2
+Automobiles
+2000
+What is the most fuel effecient luxury car?
+Lamborghini Aventador
+Ferrari 488 GTB
+Shelby GT350
+Tesla Model S
+4
+5
+2
+Words that start with the letter "S"
+400
+This Country is the world's only island city-state
+San Diego
+Sudan
+Sacramento
+Singapore
+4
+5
+2
+Words that start with the letter "S"
+800
+This mythical figure brings presents once a year
+Easter Bunny
+Santa
+Tooth Fairy
+Scroog
+2
+5
+2
+Words that start with the letter "S"
+1200
+A word that means you sit too long
+Sleepy
+Sedentary
+Snappy
+Slow
+2
+5
+2
+Words that start with the letter "S"
+1600
+This 'Red' colored fish is caught in the Gulf of Mexico
+Snapper
+Tuna
+Shrimp
+Swordfish
+1
+5
+2
+Words that start with the letter "S"
+2000
+This Russian manufacturing company builds fighter aircraft
+Sikorsky
+Boeing
+sukhoi
+Slider
+3
+6
+2
+Movie Quotes
+400
+“They may take our lives but they’ll never take our freedom”
+300
+Braveheart
+Prince of Egypt
+Saving Private Ryan
+2
+6
+2
+Movie Quotes
+800
+"If you let my daughter go now, that'll be the end of it. I will not look for you, I will not pursue you. But if you don't, I will look for you, I will find you, and I will kill you."
+The Fast and The Furious
+Taken
+Bourne Identity
+The Silence of the Lambs
+2
+6
+2
+Movie Quotes
+1200
+"Help me, Obi-Wan Kenobi. You're my only hope."
+Lord of the Rings
+Star Trek
+Star Wars Episode I - The Phantom Menace
+Star wars Episode IV - A New Hope
+4
+6
+2
+Movie Quotes
+1600
+"You is kind. You is smart. You is important."
+The Help
+Gone With the Wind
+Forest Gump
+Remember the Titans
+1
+6
+2
+Movie Quotes
+2000
+"Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
+Django Unchained
+Pulp Fiction
+The Princess Bride
+Zoro
+3
