@@ -1,10 +1,14 @@
 package teamAgile;
 
+import java.util.Scanner;
+
 public class Player
 {
     private String name;
     private int[] points;
     private int freePlayTokens;
+
+    Scanner user_in = new Scanner(System.in);
 
     public Player(String name)
     {
@@ -52,8 +56,12 @@ public class Player
      */
     public Boolean useToken()
     {
-        //TODO Prompt user yes or no
-        if (freePlayTokens > 0)
+        System.out.print("Would you like to use a free play token?");
+        System.out.println(" You have " + freePlayTokens + " remaining");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int choice = user_in.nextInt();
+        if (choice == 1)
         {
             freePlayTokens--;
             return true;
@@ -72,8 +80,24 @@ public class Player
         return name;
     }
 
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @param round
+     * @return
+     */
     public int getPoints(int round)
     {
         return points[round];
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @return
+     */
+    public int getTokens()
+    {
+        return freePlayTokens;
     }
 }
