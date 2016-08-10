@@ -8,6 +8,7 @@ public class Question
     private Boolean isAnswered;
     private String category;
     private String question;
+    private String[] answers;
     private int answer;
 
     Scanner user_in = new Scanner(System.in);
@@ -17,14 +18,19 @@ public class Question
      * Create a new Question object.
      * @param points
      * @param category
+     * @param question
+     * @param ans
+     * @param answer
      */
-    public Question(int points, String category)
+    public Question(int points, String category, String question, String[] ans,
+        int answer)
     {
         pointValue = points;
         this.category = category;
         isAnswered = false;
-        question = "1 or 2";
-        answer = 1;
+        this.question = question;
+        answers = ans;
+        this.answer = answer;
     }
 
     // ----------------------------------------------------------
@@ -35,8 +41,15 @@ public class Question
     public int askQuestion()
     {
         System.out.println(question);
-        int ans = user_in.nextInt();
-        if (ans == answer)
+        isAnswered = true;
+        for (int i = 0; i < 4; i++)
+        {
+            System.out.println((i + 1) + ". " + answers[i]);
+        }
+
+        int userAns = user_in.nextInt();
+
+        if (userAns == answer)
         {
             System.out.println("Correct");
             return pointValue;
@@ -46,5 +59,25 @@ public class Question
             System.out.println("Incorrect");
             return pointValue * -1;
         }
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @return
+     */
+    public boolean beenAsked()
+    {
+        return isAnswered;
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @return category
+     */
+    public String getCategory()
+    {
+        return category;
     }
 }
