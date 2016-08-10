@@ -1,6 +1,7 @@
 package teamAgile;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class PlayGame
 {
@@ -8,15 +9,24 @@ public class PlayGame
     private int round;
     private int remainingSpins;
     private int playersTurn;
+    private Question[][] gameBoard;
 
     Random rand = new Random();
+    Scanner user_in = new Scanner(System.in);
 
-    public PlayGame(Player[] playerList)
+    // ----------------------------------------------------------
+    /**
+     * Create a new PlayGame object.
+     * @param playerList
+     * @param board
+     */
+    public PlayGame(Player[] playerList, Question[][] board)
     {
         this.playerList = playerList;
-        remainingSpins = 10;
+        remainingSpins = 50;
         round = 1;
         playersTurn = 0;
+        gameBoard = board;
     }
 
     // ----------------------------------------------------------
@@ -25,90 +35,167 @@ public class PlayGame
      */
     public void startGame()
     {
-        while (remainingSpins > 0)
-        {
-            System.out.println("Current Score");
-            for (int i = 0; i < playerList.length; i++)
-            {
-                System.out.println(playerList[i].getName() + ": " + playerList[i].getPoints(round - 1));
-            }
-            int move = spinWheel();
+        Scoreboard board = new Scoreboard();
 
-            if (move == WheelOfJeopardy.CAT1)
+        while (round <= 2)
+        {
+            while (remainingSpins > 0)
             {
-                System.out.println("Cat 1");
-                Question currQuestion = getQuestion(1);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.CAT2)
-            {
-                System.out.println("Cat 2");
-                Question currQuestion = getQuestion(2);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.CAT3)
-            {
-                System.out.println("Cat 3");
-                Question currQuestion = getQuestion(3);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.CAT4)
-            {
-                System.out.println("Cat 4");
-                Question currQuestion = getQuestion(4);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.CAT5)
-            {
-                System.out.println("Cat 5");
-                Question currQuestion = getQuestion(5);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.CAT6)
-            {
-                System.out.println("Cat 6");
-                Question currQuestion = getQuestion(6);
-                playerList[playersTurn].updatePoints(currQuestion.askQuestion(), round - 1);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.LOSE_TURN)
-            {
-                System.out.println("Lose Turn");
-                if (!playerList[playersTurn].useToken())
+                board.displayStats(playerList, round, remainingSpins);
+                System.out.println(playerList[playersTurn].getName() + "'s turn");
+                int move = spinWheel();
+
+                if (move == WheelOfJeopardy.PLAYERS_CHOICE)
+                {
+                    System.out.println("Player's Choice");
+                    System.out.println("Please select a category");
+                    for (int j = 0; j < 6; j++)
+                    {
+                        Question q = getQuestion(j);
+                        if (q == null)
+                            continue;
+                        System.out.println((j + 1) + ". " + q.getCategory());
+                    }
+                    move = user_in.nextInt() - 1;
+                }
+                if (move == WheelOfJeopardy.OPP_CHOICE)
+                {
+                    System.out.println("Opponent's Choice");
+                    System.out.println("Please select a category");
+                    for (int j = 0; j < 6; j++)
+                    {
+                        Question q = getQuestion(j);
+                        if (q == null)
+                            continue;
+                        System.out.println((j + 1) + ". " + q.getCategory());
+                    }
+                    move = user_in.nextInt() - 1;
+                }
+                if (move == WheelOfJeopardy.CAT1)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT1);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        move = WheelOfJeopardy.LOSE_TURN;
+                }
+                if (move == WheelOfJeopardy.CAT2)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT2);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        move = WheelOfJeopardy.LOSE_TURN;
+                }
+                if (move == WheelOfJeopardy.CAT3)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT3);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        nextPlayer();
+                }
+                if (move == WheelOfJeopardy.CAT4)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT4);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        move = WheelOfJeopardy.LOSE_TURN;
+                }
+                if (move == WheelOfJeopardy.CAT5)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT5);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        move = WheelOfJeopardy.LOSE_TURN;
+                }
+                if (move == WheelOfJeopardy.CAT6)
+                {
+                    Question currQuestion = getQuestion(WheelOfJeopardy.CAT6);
+                    if (currQuestion == null)
+                    {
+                        System.out.println("This Category is empty, spinning again...");
+                        continue;
+                    }
+                    System.out.println(currQuestion.getCategory());
+
+                    int points = currQuestion.askQuestion();
+                    playerList[playersTurn].updatePoints(points, round - 1);
+                    if (points < 0)
+                        move = WheelOfJeopardy.LOSE_TURN;
+                }
+                if (move == WheelOfJeopardy.LOSE_TURN)
+                {
+                    System.out.println("Lose Turn");
+                    if (playerList[playersTurn].getTokens() > 0)
+                    {
+                        if (!playerList[playersTurn].useToken())
+                            nextPlayer();
+                    }
+                    else
+                        nextPlayer();
+                }
+                if (move == WheelOfJeopardy.FREE_TURN)
+                {
+                    System.out.println("Free Token");
+                    playerList[playersTurn].addToken();
+                    System.out.println(playerList[playersTurn].getName() + " now has "
+                        + playerList[playersTurn].getTokens() + " Tokens");
+                }
+                if (move == WheelOfJeopardy.BANKRUPT)
+                {
+                    System.out.println("Bankrupt");
+                    playerList[playersTurn].bankrupt(round);
                     nextPlayer();
+                }
+                if (move == WheelOfJeopardy.RE_SPIN)
+                {
+                    System.out.println("Spin Again");
+                }
             }
-            else if (move == WheelOfJeopardy.FREE_TURN)
-            {
-                System.out.println("Free Token");
-                playerList[playersTurn].addToken();
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.BANKRUPT)
-            {
-                System.out.println("Bankrupt");
-                playerList[playersTurn].bankrupt(round);
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.PLAYERS_CHOICE)
-            {
-                System.out.println("PLayer's Choice");
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.OPP_CHOICE)
-            {
-                System.out.println("Opponent's Choice");
-                nextPlayer();
-            }
-            else if (move == WheelOfJeopardy.RE_SPIN)
-            {
-                System.out.println("Spin Again");
-            }
+            if (round == 1)
+                System.out.println("Round 1 has ended, moving to round 2");
+            round++;
+            remainingSpins = 50;
         }
+        board.declareWinner(playerList);
     }
     // ----------------------------------------------------------
     /**
@@ -144,7 +231,11 @@ public class PlayGame
      */
     public Question getQuestion(int category)
     {
-        Question ques = new Question(50, "cat 1");
-        return ques;
+        for (int i = 0; i < 5; i++)
+        {
+            if (!gameBoard[(category) + (6 * (round - 1))][i].beenAsked())
+                return gameBoard[(category) + (6 * (round - 1))][i];
+        }
+        return null;
     }
 }
