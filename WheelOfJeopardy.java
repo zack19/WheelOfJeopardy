@@ -1,7 +1,10 @@
 package teamAgile;
 
+import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.*;
 
 public class WheelOfJeopardy
 {
@@ -23,6 +26,7 @@ public class WheelOfJeopardy
         Scanner user_in = new Scanner(System.in);
         Random rand = new Random();
 
+        Question[][] board = readQuestions();
         System.out.print("Enter the number of players: ");
         int players = user_in.nextInt();
         Player[] playerList = new Player[players];
@@ -34,7 +38,7 @@ public class WheelOfJeopardy
             int pos = rand.nextInt(players);
             while (playerList[pos] != null)
             {
-                pos = rand.nextInt(3);
+                pos = rand.nextInt(players);
             }
             playerList[pos] = tempPlayer;
         }
@@ -44,7 +48,57 @@ public class WheelOfJeopardy
         {
             System.out.println((i+1) + ". " + playerList[i].getName());
         }
-        PlayGame game = new PlayGame(playerList);
+        PlayGame game = new PlayGame(playerList, board);
         game.startGame();
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @return
+     */
+    public static Question[][] readQuestions()
+    {
+        Question[][] board = new Question[12][5];
+        try
+        {
+            FileReader fr = new FileReader("questions.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            try
+            {
+                while (br.ready())
+                {
+                    int cat = Integer.parseInt(br.readLine());
+                    int round = Integer.parseInt(br.readLine());
+                    String catName = br.readLine();
+                    int points = Integer.parseInt(br.readLine());
+                    String question = br.readLine();
+                    String[] answers = new String[4];
+                    for (int i = 0; i < 4; i++)
+                    {
+                        answers[i] = br.readLine();
+                    }
+                    int answer = Integer.parseInt(br.readLine());
+
+                    Question ques = new Question(points, catName, question, answers,
+                        answer);
+
+                    board[(cat - 1) + (6 * (round - 1))][(points / (200 * round)) - 1] = ques;
+                }
+                br.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        return board;
     }
 }
