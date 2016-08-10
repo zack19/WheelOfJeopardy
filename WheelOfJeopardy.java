@@ -27,6 +27,13 @@ public class WheelOfJeopardy
         Random rand = new Random();
 
         Question[][] board = readQuestions();
+        System.out.println("Welcome to Wheel Of Jeopardy");
+        System.out.println("Please enter the number of your selection");
+        System.out.println("1. Play Game with Defualt Question Board");
+        System.out.println("2. Load Custom Questions");
+        if (user_in.nextInt() == 2)
+            updateBoard(board);
+
         System.out.print("Enter the number of players: ");
         int players = user_in.nextInt();
         Player[] playerList = new Player[players];
@@ -50,6 +57,61 @@ public class WheelOfJeopardy
         }
         PlayGame game = new PlayGame(playerList, board);
         game.startGame();
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @param qBoard
+     */
+    public static void updateBoard(Question[][] qBoard)
+    {
+        try
+        {
+            FileReader fr = new FileReader("additions.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            try
+            {
+                while (br.ready())
+                {
+                    int cat = Integer.parseInt(br.readLine());
+                    int round = Integer.parseInt(br.readLine());
+                    String catName = br.readLine();
+                    int points = Integer.parseInt(br.readLine());
+                    String question = br.readLine();
+                    String[] answers = new String[4];
+                    for (int i = 0; i < 4; i++)
+                    {
+                        answers[i] = br.readLine();
+                    }
+                    int answer = Integer.parseInt(br.readLine());
+
+                    Question ques = new Question(points, catName, question, answers,
+                        answer);
+
+                    qBoard[(cat - 1) + (6 * (round - 1))][(points / (200 * round)) - 1] = ques;
+                }
+                br.close();
+                fr.close();
+            }
+            catch (NumberFormatException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            catch (IOException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 
     // ----------------------------------------------------------
@@ -87,6 +149,7 @@ public class WheelOfJeopardy
                     board[(cat - 1) + (6 * (round - 1))][(points / (200 * round)) - 1] = ques;
                 }
                 br.close();
+                fr.close();
             }
             catch (IOException e)
             {
