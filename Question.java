@@ -1,4 +1,4 @@
-\package teamAgile;
+package teamAgile;
 
 import java.io.IOException;
 import java.io.FileNotFoundException;
