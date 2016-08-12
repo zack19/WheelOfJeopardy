@@ -83,7 +83,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         move = WheelOfJeopardy.LOSE_TURN;
                 }
                 if (move == WheelOfJeopardy.CAT2)
@@ -98,7 +98,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         move = WheelOfJeopardy.LOSE_TURN;
                 }
                 if (move == WheelOfJeopardy.CAT3)
@@ -113,7 +113,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         nextPlayer();
                 }
                 if (move == WheelOfJeopardy.CAT4)
@@ -128,7 +128,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         move = WheelOfJeopardy.LOSE_TURN;
                 }
                 if (move == WheelOfJeopardy.CAT5)
@@ -143,7 +143,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         move = WheelOfJeopardy.LOSE_TURN;
                 }
                 if (move == WheelOfJeopardy.CAT6)
@@ -158,7 +158,7 @@ public class PlayGame
 
                     int points = currQuestion.askQuestion();
                     playerList[playersTurn].updatePoints(points, round - 1);
-                    if (points < 0)
+                    if (points <= 0)
                         move = WheelOfJeopardy.LOSE_TURN;
                 }
                 if (move == WheelOfJeopardy.LOSE_TURN)
